@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/new'
-  get 'comments/create'
-  get 'commetnts/index'
-  get 'commetnts/new'
-  get 'new/show'
  root 'subs#index'
 
 
@@ -14,5 +9,5 @@ Rails.application.routes.draw do
  scope 'topics/:topic_id', as: 'topic' do
    resources :comments, only: [:new, :create]
  end
- 
+
 end

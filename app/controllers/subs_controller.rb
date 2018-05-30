@@ -6,7 +6,6 @@ class SubsController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -15,7 +14,6 @@ class SubsController < ApplicationController
   end
 
   def edit
-    @sub = Sub.new
     render :form
   end
 

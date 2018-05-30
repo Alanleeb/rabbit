@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
 before_action :set_sub
 before_action :set_topic, only: [:show, :edit, :update, :destroy]
+
   def index
     @topics = @sub.topics
   end
@@ -14,12 +15,13 @@ before_action :set_topic, only: [:show, :edit, :update, :destroy]
   end
 
   def edit
+    render :form
   end
 
   def create
     @topic = @sub.topics.create(topic_params)
     if @topic.save
-      redirect_to sub_topic_path(@sub, @topic)
+      redirect_to [@sub, @topic]
     else
       render :form
     end
